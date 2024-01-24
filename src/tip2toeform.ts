@@ -70,7 +70,7 @@ const formSections: IFormSection[] = [
         type: 'select',
       },
       {
-        title: '',
+        title: ' ',
         name: 'affectedRelatives',
         type: 'selectMultiple',
         options: [

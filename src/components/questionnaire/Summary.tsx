@@ -72,14 +72,14 @@ export default function Summary({ phenoPacket, customFormData }: IProps) {
             </button>
           </div>
         </div>
-        {(type === 'all' || type === 'normal') && (
+        {(type === 'all' || type === 'abnormal') && (
           <PhenotypicFeaturesList
             phenotypicFeatures={phenoPacket.phenotypicFeatures?.filter(
               (x) => !x.excluded,
             )}
           />
         )}
-        {(type === 'all' || type === 'abnormal') && (
+        {(type === 'all' || type === 'normal') && (
           <PhenotypicFeaturesList
             phenotypicFeatures={phenoPacket.phenotypicFeatures?.filter(
               (x) => x.excluded,

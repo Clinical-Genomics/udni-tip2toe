@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
@@ -20,6 +20,12 @@ export interface IIndividualFormData {
 }
 
 export default function EditIndividual() {
+  useEffect(() => {
+    return () => {
+      handleSubmit(doSubmit)();
+    };
+  }, []);
+
   const navigate = useNavigate();
   const { nextUrl } = useNextUrl();
 
