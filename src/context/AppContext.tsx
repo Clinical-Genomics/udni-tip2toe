@@ -4,6 +4,7 @@ import { PhenotypicFeature } from '../interfaces/phenopackets/schema/v2/core/phe
 import { Phenopacket } from '../interfaces/phenopackets/schema/v2/phenopackets';
 import { ICustomFormData, PhenopacketDate } from '../types';
 import { File as PhenopacketFile } from '../interfaces/phenopackets/schema/v2/core/base';
+import SuggestedFeature from '../interfaces/suggested-feature';
 
 export type Action =
   | { type: 'CLEAR' }
@@ -21,6 +22,10 @@ export type Action =
       payload: Partial<PhenotypicFeature>;
     }
   | {
+      type: 'SEARCHED_PHENOTYPIC_FEATURE';
+      payload: SuggestedFeature;
+    }
+  | {
       type: 'CONTINUE_FORM';
       payload: {
         phenoPacket: Partial<Phenopacket>;
@@ -35,12 +40,14 @@ export type Action =
 export interface IAppContext {
   phenoPacket: Partial<Phenopacket>;
   autoSave: boolean;
+  suggestedFeatures?: SuggestedFeature[];
   customFormData?: ICustomFormData;
 }
 
 const emptyState: IAppContext = {
   phenoPacket: {},
   autoSave: false,
+  suggestedFeatures: [],
 };
 
 let initialState: IAppContext = {
@@ -111,6 +118,11 @@ const appReducer = (state: IAppContext, action: Action) => {
       return {
         ...state,
         phenoPacket: { ...state.phenoPacket, phenotypicFeatures },
+      };
+    case 'SEARCHED_PHENOTYPIC_FEATURE':
+      return {
+        ...state,
+        suggestedFeatures: [...(state.suggestedFeatures || []), action.payload],
       };
     case 'SET_PHENOTYPIC_FEATURES':
       return {

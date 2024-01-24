@@ -128,16 +128,16 @@ export default function EditIndividual() {
       </div>
       <div className="my-4">
         <Input
-          type="number"
-          label="Age of mother at time of referral"
-          {...register('customFormData.motherAge')}
+          type="date"
+          label="Date of birth mother"
+          {...register('customFormData.motherBirthdate')}
         />
       </div>
       <div className="my-4">
         <Input
-          type="number"
-          label="Age of father at time of referral"
-          {...register('customFormData.fatherAge')}
+          type="date"
+          label="Date of birth father"
+          {...register('customFormData.fatherBirthdate')}
         />
       </div>
       <div className="my-4">
@@ -153,6 +153,7 @@ export default function EditIndividual() {
             'Latino',
             'Middle East',
             'Oceanian',
+            'Mixed',
           ].map((x) => ({ label: x, value: x }))}
         />
         {errors?.customFormData?.ethnicity && (

@@ -10,8 +10,15 @@ interface IProps {
 }
 
 export default function FormSection({ formSection }: IProps) {
-  const { title, description, questions, uploadSections, ontologies, slug } =
-    formSection;
+  const {
+    title,
+    description,
+    questions,
+    uploadSections,
+    uploadGroupSections,
+    ontologies,
+    slug,
+  } = formSection;
   return (
     <>
       <h2>{title}</h2>
@@ -26,6 +33,28 @@ export default function FormSection({ formSection }: IProps) {
               <UploadWidget section={`${slug}:${x}`} />
             </div>
           ))}
+          <NavButtons />
+        </div>
+      ) : null}
+
+      {uploadGroupSections ? (
+        <div>
+          {uploadGroupSections.map(
+            (group, index) =>
+              group && (
+                <div
+                  key={index}
+                  className={'flex flex-col lg:flex-row lg:space-x-2'}
+                >
+                  {group.map((x) => (
+                    <div className="basis-4/12" key={x}>
+                      <h4>{x}</h4>
+                      <UploadWidget section={`${slug}:${x}`} />
+                    </div>
+                  ))}
+                </div>
+              ),
+          )}
           <NavButtons />
         </div>
       ) : null}
