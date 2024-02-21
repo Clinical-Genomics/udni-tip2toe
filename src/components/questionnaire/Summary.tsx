@@ -11,6 +11,7 @@ interface IProps {
   customFormData?: ICustomFormData;
 }
 export default function Summary({ phenoPacket, customFormData }: IProps) {
+  const [type, setType] = useState<'all' | 'normal' | 'abnormal'>('abnormal');
   return (
     <article className="summary divide-y space-y-4">
       <ViewPhotographs
