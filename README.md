@@ -19,13 +19,6 @@ npm install
 npm run dev
 ```
 
-## Version log
-
-### 1.1.0
-
-- Continue form (fetch phenopacket, custom form data)
-- API status indicator
-
 ## Credits
 
 This service/product uses the Human Phenotype Ontology (version information). Find out more at http://www.human-phenotype-ontology.org
