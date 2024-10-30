@@ -1,4 +1,4 @@
-name: Publish to Docker Hub
+name: Publish to Docker Hub stage
 
 on:
   pull_request:
@@ -22,4 +22,5 @@ jobs:
         name: clinicalgenomics/tip2toe-stage
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: Dockerfile-stage
         tags: "latest, ${{steps.branch-name.outputs.current_branch}}"
