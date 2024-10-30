@@ -53,14 +53,12 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row md:divide-x divide-udni-teal">
-          <div className="w-full p-8   flex flex-col items-center my-5 group">
-            <div className="flex items-center space-x-2">
-              <DocumentPlusIcon className="w-5 text-udni-teal" />{' '}
+          <div className="w-full p-8 flex flex-col items-end my-5 group">
+            <div className="flex flex-col items-start">
+              <div className="flex items-center space-x-2">
+                <DocumentPlusIcon className="w-5 text-udni-teal" />{' '}
               <h3>Start new form</h3>
             </div>
-            <p className="text-gray-600 text-sm">
-              For physicians, geneticists. Start questionnare.
-            </p>
             <label className="mt-4">
               <input
                 type="checkbox"
@@ -88,18 +86,19 @@ export default function Home() {
               Start new
             </Link>
           </div>
-          <div className="w-full p-8   flex flex-col items-center my-5 ">
-            <div className="flex items-center space-x-2">
-              <DocumentArrowDownIcon className="w-5 text-udni-teal" />
-              <h3>Continue form</h3>
-            </div>
-            <p className="text-gray-600 text-sm">
-              Add images, documents to an existing form.
-            </p>
-            <ContinueForm />
+        </div>
+        <div className="w-full p-8   flex flex-col items-start my-5 ">
+          <div className="flex items-center space-x-2">
+            <DocumentArrowDownIcon className="w-5 text-udni-teal" />
+            <h3>Continue form</h3>
           </div>
+          <p className="text-gray-600 text-sm">
+            Continue editing an existing form.
+          </p>
+          <ContinueForm />
         </div>
       </div>
-    </>
+    </div>
+  </>
   );
 }
