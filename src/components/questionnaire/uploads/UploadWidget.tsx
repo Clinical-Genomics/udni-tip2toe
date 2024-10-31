@@ -33,6 +33,7 @@ export default function UploadWidget({ section }: IProps) {
       'image/*': [],
       'application/pdf': [],
       'application/vnd.ms-excel': [],
+      'video/*': [],
     },
     onDrop: (acceptedFiles: File[]) => {
       setIsActive(false);

@@ -53,49 +53,49 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row md:divide-x divide-udni-teal">
-          <div className="w-full p-8   flex flex-col items-center my-5 group">
-            <div className="flex items-center space-x-2">
-              <DocumentPlusIcon className="w-5 text-udni-teal" />{' '}
-              <h3>Start new form</h3>
-            </div>
-            <p className="text-gray-600 text-sm">
-              For physicians, geneticists. Start questionnare.
-            </p>
-            <label className="mt-4">
-              <input
-                type="checkbox"
-                checked={state.autoSave}
-                onChange={(e) =>
-                  dispatch({ type: 'SET_AUTOSAVE', payload: e.target.checked })
-                }
-              />{' '}
-              Enable cookies for auto-save
-            </label>
-            {state.customFormData ||
-            state.phenoPacket?.phenotypicFeatures?.length ? (
+          <div className="w-full p-8   flex flex-col md:items-end my-5 group">
+            <div className="flex flex-col items-start">
+              <div className="flex items-center space-x-2">
+                <DocumentPlusIcon className="w-5 text-udni-teal" />{' '}
+                <h3>Start new form</h3>
+              </div>
+              <label className="mt-4">
+                <input
+                  type="checkbox"
+                  checked={state.autoSave}
+                  onChange={(e) =>
+                    dispatch({
+                      type: 'SET_AUTOSAVE',
+                      payload: e.target.checked,
+                    })
+                  }
+                />{' '}
+                Enable cookies for auto-save
+              </label>
+              {state.customFormData ||
+              state.phenoPacket?.phenotypicFeatures?.length ? (
+                <Link
+                  to="/questionnaire"
+                  className="border rounded p-3 px-6 mt-5 border-udni-teal text-udni-teal uppercase text-sm font-bold hover:bg-udni-teal hover:text-white"
+                >
+                  Resume auto-saved
+                </Link>
+              ) : null}
               <Link
                 to="/questionnaire"
+                onClick={reset}
                 className="border rounded p-3 px-6 mt-5 border-udni-teal text-udni-teal uppercase text-sm font-bold hover:bg-udni-teal hover:text-white"
               >
-                Resume auto-saved
+                Start new
               </Link>
-            ) : null}
-            <Link
-              to="/questionnaire"
-              onClick={reset}
-              className="border rounded p-3 px-6 mt-5 border-udni-teal text-udni-teal uppercase text-sm font-bold hover:bg-udni-teal hover:text-white"
-            >
-              Start new
-            </Link>
+            </div>
           </div>
-          <div className="w-full p-8   flex flex-col items-center my-5 ">
+          <div className="w-full p-8   flex flex-col items-start my-5 ">
             <div className="flex items-center space-x-2">
               <DocumentArrowDownIcon className="w-5 text-udni-teal" />
               <h3>Continue form</h3>
             </div>
-            <p className="text-gray-600 text-sm">
-              Add images, documents to an existing form.
-            </p>
+            <p className="text-gray-600 text-sm">Continue existing form.</p>
             <ContinueForm />
           </div>
         </div>

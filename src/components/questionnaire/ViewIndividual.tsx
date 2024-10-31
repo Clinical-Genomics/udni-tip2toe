@@ -72,12 +72,12 @@ export default function ViewIndividual({ individual, customFormData }: IProps) {
       value: getVitalStatus(individual.vitalStatus?.status),
     },
     {
-      question: 'Age of mother at time of referral',
-      value: customFormData?.motherAge.toString(),
+      question: 'Date of birth mother',
+      value: customFormData?.motherBirthdate,
     },
     {
-      question: 'Age of father at time of referral',
-      value: customFormData?.fatherAge,
+      question: 'Date of birth father',
+      value: customFormData?.fatherBirthdate,
     },
     {
       question: 'Ethnicity of patient',

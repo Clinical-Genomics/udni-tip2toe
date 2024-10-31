@@ -110,6 +110,13 @@ export default function SubmitForm() {
       });
       const formDataRet = (await formDataRes.json()) as ICustomFormData;
       setPassword(formDataRet.password);
+      await fetch(`${VITE_APIURL}/api/v1/suggestedfeatures`, {
+        method: 'POST',
+        body: JSON.stringify({
+          suggestedFeatures: state.suggestedFeatures,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
   };
 

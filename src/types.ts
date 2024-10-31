@@ -26,6 +26,7 @@ export interface IFormSection {
   description?: string;
   questions?: IQuestion[];
   uploadSections?: string[];
+  uploadGroupSections?: string[][];
 }
 
 export interface IIndividual {
