@@ -1,7 +1,6 @@
 ## Changelog
 
-### [unreleased]
-
+### [1.2.0]
 #### Added
 - A CHANGELOG
 - Basic GitHub workflows automation (PR CHANGELOG check, woke, docker publish)
