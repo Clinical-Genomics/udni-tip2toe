@@ -7,7 +7,7 @@ interface IResult {
 }
 async function lookupHpoTerm(term: string): Promise<IResult> {
   const ret = await fetch(
-    `https://hpo.jax.org/api/hpo/term/${encodeURI(term)}`,
+    `https://ontology.jax.org/api/hp/terms/${encodeURI(term)}`,
   );
   if (ret.ok) {
     const res = (await ret.json()) as TermResponse;
