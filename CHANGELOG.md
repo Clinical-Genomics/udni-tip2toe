@@ -9,7 +9,8 @@
 - Local vite default env setting
 - Changes from WF develop (@Nirmal0809) - suggestedFeature, formatting, etc.
 #### Fixed
-- Use Dockerfile-stage in stage build 
+- Use Dockerfile-stage in stage build
+- HPO JAX API has moved
 
 ### [1.1.0]
 - Continue form (fetch phenopacket, custom form data)

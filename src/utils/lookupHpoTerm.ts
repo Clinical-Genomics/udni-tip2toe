@@ -31,7 +31,7 @@ export interface TermsResponse {
 
 async function searchHpoTerms(query: string): Promise<TermsResponse> {
   const ret = await fetch(
-    `https://hpo.jax.org/api/hpo/search/?q=${encodeURI(
+    `https://ontology.jax.org/api/hp/search?q=${encodeURI(
       query,
     )}&max=10&offset=0&category=terms`,
   );
