@@ -11,7 +11,7 @@ async function lookupHpoTerm(term: string): Promise<IResult> {
   );
   if (ret.ok) {
     const res = (await ret.json()) as TermResponse;
-    return { term, label: res.details.name };
+    return { term, label: res.name };
   } else {
     return { error: 'Unknown HPO term' };
   }
@@ -20,9 +20,9 @@ async function lookupHpoTerm(term: string): Promise<IResult> {
 export interface IJaxTerm {
   name: string;
   id: string;
-  childrenCount: number;
-  ontologyId: string;
-  synonym?: string;
+  descendantCount: number;
+  xrefs?: string[];
+  synonyms: string[];
 }
 export interface TermsResponse {
   error?: string;
