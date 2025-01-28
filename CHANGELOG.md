@@ -4,6 +4,11 @@
 #### Fixed
 - Adding manual HPO terms was broken - updated JAX Ontology API Term Interface to fix
 
+### [1.2.1]
+#### Fixed
+- Docker prod build
+- Docker stage builds use branch name
+
 ### [1.2.0]
 #### Added
 - A CHANGELOG
