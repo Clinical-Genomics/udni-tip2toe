@@ -1,6 +1,6 @@
 ## Changelog
 
-### [unreleased]
+### [1.2.2]
 #### Fixed
 - Adding manual HPO terms was broken - updated JAX Ontology API Term Interface to fix
 
