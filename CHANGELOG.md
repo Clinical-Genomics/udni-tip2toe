@@ -1,5 +1,9 @@
 ## Changelog
 
+### [unreleased]
+#### Fixed
+- Fix Docker image health status by adding provenance and updating to current base image (#22)
+
 ### [1.2.2]
 #### Fixed
 - Adding manual HPO terms was broken - updated JAX Ontology API Term Interface to fix
