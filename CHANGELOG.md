@@ -1,6 +1,6 @@
 ## Changelog
 
-### [unreleased]
+### [1.2.3]
 #### Fixed
 - Fix Docker image health status by adding provenance and updating to current base image (#22)
 
